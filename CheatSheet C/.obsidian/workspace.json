@@ -28,18 +28,6 @@
             }
           },
           {
-            "id": "1337cdce3508388a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "YetAnotherGithubSheetCheat.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "f17ce579994bc626",
             "type": "leaf",
             "state": {
@@ -52,7 +40,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -181,8 +169,8 @@
   },
   "active": "f17ce579994bc626",
   "lastOpenFiles": [
-    "USEFUL LINKS.md",
     "COMPILATION.md",
-    "YetAnotherGithubSheetCheat.md"
+    "YetAnotherGithubSheetCheat.md",
+    "USEFUL LINKS.md"
   ]
 }

@@ -25,8 +25,8 @@ int main(){
 
     coutTotal = coutLocation + coutEssence + coutKmTotal;
 
-    printf("Cout de la location (en euros) : ", coutLocation);
-    printf("Cout de l'essence (en euros) : ", coutEssence);
-    printf("Cout au km (en euros) : ", coutKmTotal);
-    printf("Cout total (en euros) : ", coutTotal);
+    printf("Cout de la location (en euros) : %f\n", coutLocation);
+    printf("Cout de l'essence (en euros) : %f\n", coutEssence);
+    printf("Cout au km (en euros) : %f\n", coutKmTotal);
+    printf("Cout total (en euros) : %f\n", coutTotal);
 }

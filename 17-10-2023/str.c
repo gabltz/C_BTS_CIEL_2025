@@ -84,6 +84,20 @@ int main(){
 
     printf("######################################\n\n");
 
+    // UTILISATION DE STRPBRK
+
+    char charCherche2 = 'c';
+
+    char* res3 = strpbrk(str1, &charCherche2);
+
+    if (res3 != NULL) {
+        printf("Le caractère '%c' a été trouvé dans str1 à la position %ld.\n", charCherche2, res3 - str1);
+    } else {
+        printf("Le caractère '%c' n'a pas été trouvé dans str1.\n", charCherche2);
+    }
+
+    
+
 
 
     return 0;

@@ -86,18 +86,50 @@ int main(){
 
     // UTILISATION DE STRPBRK
 
+    printf("UTILISATION DE STRPBRK\n");
+
     char charCherche2 = 'c';
 
     char* res3 = strpbrk(str1, &charCherche2);
 
     if (res3 != NULL) {
-        printf("Le caractère '%c' a été trouvé dans str1 à la position %ld.\n", charCherche2, res3 - str1);
+        printf("Le caractère '%c' a été trouvé dans str1 à la position %ld.\n\n", charCherche2, res3 - str1);
     } else {
-        printf("Le caractère '%c' n'a pas été trouvé dans str1.\n", charCherche2);
+        printf("Le caractère '%c' n'a pas été trouvé dans str1.\n\n", charCherche2);
     }
 
-    
+    printf("######################################\n\n");
 
+    // UTILISATION DE STRSTR
+
+    printf("UTILISATION DE STRSTR\n");
+
+    char str6[] = {'a','1','b','2','c','3','d','4','e','5','f','6','\0'};
+
+    char* res4 = strstr(str6, str1);
+
+    if (res4 != NULL) {
+        printf("La sous-chaîne str1 a été trouvée dans str6 à la position %ld.\n\n", res4 - str6);
+    } else {
+        printf("La sous-chaîne str1 n'a pas été trouvée dans str6.\n\n");
+    }
+
+    printf("######################################\n\n");
+
+    // UTILISATION DE SPRINTF
+
+    printf("UTILISATION DE SPRINTF\n");
+
+    char str7[10]; // creation d'str7
+
+    // ajout de "spiry" dans str7
+    sprintf(str7, "spiry");
+
+    // ajout de 2025 à la fin de la chaine str2
+    sprintf(str2, "%s2025", str2);
+
+    printf("str7 : %s\n", str7);
+    printf("str2 : %s\n", str2);
 
 
     return 0;

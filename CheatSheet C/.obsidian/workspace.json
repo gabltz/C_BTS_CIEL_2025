@@ -90,7 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "57c11b5a28baad5d",
@@ -169,8 +169,8 @@
   },
   "active": "f17ce579994bc626",
   "lastOpenFiles": [
+    "USEFUL LINKS.md",
     "COMPILATION.md",
-    "YetAnotherGithubSheetCheat.md",
-    "USEFUL LINKS.md"
+    "YetAnotherGithubSheetCheat.md"
   ]
 }

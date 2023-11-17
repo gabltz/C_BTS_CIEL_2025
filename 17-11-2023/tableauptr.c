@@ -3,10 +3,12 @@
 
 int main(){
     int tableau[4] = {10, 23, 505, 8};
+    int *ptrTab = &tableau;
     int i;
 
     for (i = 0 ; i < 4 ; i++){
-        printf("élément n°d %d : %d\n", i, tableau[i]++);
+        printf("élément n°d %d : %d\n", i, *ptrTab++);
+        
     }
     return 0;
 }

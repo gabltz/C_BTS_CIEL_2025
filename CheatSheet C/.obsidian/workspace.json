@@ -50,6 +50,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "7a7a03441b0e2300",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Untitled 1.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
+              }
+            }
           }
         ],
         "currentTab": 3
@@ -181,11 +196,14 @@
   },
   "active": "13d588daaf1aaf96",
   "lastOpenFiles": [
-    "2023-10-18.md",
     "Untitled.canvas",
-    "Untitled",
+    "2023-10-18.md",
+    "YetAnotherGithubSheetCheat.md",
     "USEFUL LINKS.md",
+    "Untitled 1.canvas",
+    "Untitled.md",
     "COMPILATION.md",
-    "YetAnotherGithubSheetCheat.md"
+    "Untitled 1",
+    "Untitled"
   ]
 }

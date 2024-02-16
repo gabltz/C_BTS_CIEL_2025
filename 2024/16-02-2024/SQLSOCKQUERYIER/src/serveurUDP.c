@@ -69,10 +69,19 @@ int main() {
             default: /* réception de n octets */
                 printf("Message %s reçu avec succès(%d octets)\n\n", messageRecu, lus);
 
-                // Parsez les données reçues (exemple : idES:int, dateHeure:DATE, numModule:int, numEntree:int, numSortie:int, ETAT:1 ou 0)
-                // Supposons que le message ait le format suivant : idES numModule numEntree numSortie ETAT
+                // Parsez les données reçues (séparées par des virgules)
+                char *token;
+                token = strtok(messageRecu, ",");
                 int idES, numModule, numEntree, numSortie, ETAT;
-                sscanf(messageRecu, "%d %d %d %d %d", &idES, &numModule, &numEntree, &numSortie, &ETAT);
+                sscanf(token, "%d", &idES);
+                token = strtok(NULL, ",");
+                sscanf(token, "%d", &numModule);
+                token = strtok(NULL, ",");
+                sscanf(token, "%d", &numEntree);
+                token = strtok(NULL, ",");
+                sscanf(token, "%d", &numSortie);
+                token = strtok(NULL, ",");
+                sscanf(token, "%d", &ETAT);
 
                 // Construire la requête SQL d'insertion avec la date et l'heure actuelles
                 char query[1000];

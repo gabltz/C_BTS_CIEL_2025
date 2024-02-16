@@ -40,6 +40,9 @@
     $mysqli->close();
     ?>
 
+    <footer>
+        <p>© 2024 - BTS CIEL 2025 - Semaine projet semaine 8</p>
+    </footer>
 </body>
 
 </html>

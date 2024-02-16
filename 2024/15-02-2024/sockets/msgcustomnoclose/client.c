@@ -58,7 +58,7 @@ int main()
     // On choisit le numéro de port d’écoute du serveur
     pointDeRencontreServeur.sin_port = htons(PORT_SERVEUR); // = 5000
     // On choisit l’adresse IPv4 du serveur
-    inet_aton("172.18.30.169", &pointDeRencontreServeur.sin_addr); // à modifier selon le serveur
+    inet_aton("172.18.30.7", &pointDeRencontreServeur.sin_addr); // à modifier selon le serveur
     // Initialise à 0 le message
 
     while (1) {

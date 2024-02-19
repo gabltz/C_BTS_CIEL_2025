@@ -16,11 +16,11 @@ char values = "";
 
 WiFiUDP udp;
 
-
+// Fonction pour envoyer les valeurs au serveur, values est une chaîne de caractère comportant (numModule[INT], numEntree[INT], numSortie[INT], ETAT[INT])
 void sendPacket(values){
-  udp.beginPacket(serverIP, serverPort);
-  udp.print(values);
-  udp.endPacket();
+  udp.beginPacket(serverIP, serverPort); //Début du packet avec initialisation au serveur 
+  udp.print(values); // Envoi sur le socket  
+  udp.endPacket(); // Fermeture et signature du packet UDP
 }
 
 void setup() {

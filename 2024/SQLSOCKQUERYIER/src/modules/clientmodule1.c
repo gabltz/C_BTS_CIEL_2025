@@ -7,11 +7,12 @@ const char* password = ""; // Mot de passe vide
 const char* serverIP = "172.18.30.150";
 const uint16_t serverPort = 5000;
 
+/// Définir values pour sendPacket avec récupération auto des ES
+
+values = "";
+
 WiFiUDP udp;
 
-values = "%d"
-
-sendPacket(values)
 
 void sendPacket(values){
   udp.beginPacket(serverIP, serverPort);
@@ -48,9 +49,7 @@ void setup() {
 
 void loop() {
   // Envoi des données au serveur
-  udp.beginPacket(serverIP, serverPort);
-  udp.print("1,1,1,1,1");
-  udp.endPacket();
+  sendPacket(values)
 
   }
   

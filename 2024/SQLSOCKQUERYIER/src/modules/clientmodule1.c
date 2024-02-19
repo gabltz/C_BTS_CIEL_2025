@@ -1,15 +1,18 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 
+//Configuration du Wifi 
+
 const char* ssid = "Cisco24G";
 const char* password = ""; // Mot de passe vide
 
+// Configuration du socket 
 const char* serverIP = "172.18.30.150";
 const uint16_t serverPort = 5000;
 
 /// Définir values pour sendPacket avec récupération auto des ES
 
-values = "";
+char values = "";
 
 WiFiUDP udp;
 

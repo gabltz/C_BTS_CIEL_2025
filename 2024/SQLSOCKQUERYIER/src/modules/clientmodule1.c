@@ -9,6 +9,16 @@ const uint16_t serverPort = 5000;
 
 WiFiUDP udp;
 
+values = "%d"
+
+sendPacket(values)
+
+void sendPacket(values){
+  udp.beginPacket(serverIP, serverPort);
+  udp.print(values);
+  udp.endPacket();
+}
+
 void setup() {
   Serial.begin(115200);
   delay(1000);
@@ -41,6 +51,7 @@ void loop() {
   udp.beginPacket(serverIP, serverPort);
   udp.print("1,1,1,1,1");
   udp.endPacket();
+
+  }
   
-  delay(1000); // Attente d'une seconde avant d'envoyer la prochaine donnée
 }

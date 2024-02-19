@@ -15,7 +15,8 @@ table {
     width: 80%;
     margin: 20px auto;
     border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: inset;
     background-color: #fff;
 }
 
@@ -26,7 +27,7 @@ th, td {
 
 th {
     background-color: #0011ff;
-    color: white;
+    color: white
 }
 
 tr:nth-child(even) {

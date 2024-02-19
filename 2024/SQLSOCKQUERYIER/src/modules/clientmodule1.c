@@ -4,7 +4,7 @@
 const char* ssid = "Cisco24G";
 const char* password = ""; // Mot de passe vide
 
-const char* serverIP = "172.18.30.7";
+const char* serverIP = "172.18.30.150";
 const uint16_t serverPort = 5000;
 
 WiFiUDP udp;

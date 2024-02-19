@@ -72,9 +72,7 @@ int main() {
                 // Parsez les données reçues (séparées par des virgules)
                 char *token;
                 token = strtok(messageRecu, ",");
-                int idES, numModule, numEntree, numSortie, ETAT;
-                sscanf(token, "%d", &idES);
-                token = strtok(NULL, ",");
+                int numModule, numEntree, numSortie, ETAT;
                 sscanf(token, "%d", &numModule);
                 token = strtok(NULL, ",");
                 sscanf(token, "%d", &numEntree);
@@ -85,8 +83,8 @@ int main() {
 
                 // Construire la requête SQL d'insertion avec la date et l'heure actuelles
                 char query[1000];
-                sprintf(query, "INSERT INTO test (idES, dateHeure, numModule, numEntree, numSortie, ETAT) VALUES (%d, NOW(), %d, %d, %d, %d)",
-                        idES, numModule, numEntree, numSortie, ETAT);
+                sprintf(query, "INSERT INTO test (dateHeure, numModule, numEntree, numSortie, ETAT) VALUES (NOW(), %d, %d, %d, %d)",
+                        numModule, numEntree, numSortie, ETAT);
 
                 // Exécutez la requête SQL
                 if (mysql_query(conn, query)) {

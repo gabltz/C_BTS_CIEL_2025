@@ -1,0 +1,31 @@
+#define EMERGENCY_KEY 'q' // Définir la touche d'urgence
+#define D3 3 // Définir la broche GPIO pour l'arrêt d'urgence
+
+void setup() {
+    Serial.begin(9600); // Initialiser la communication série
+    pinMode(D3, INPUT_PULLUP); // Configurer la broche GPIO en entrée avec une résistance de pull-up interne
+    Serial.println("Appuyez sur 'q' pour déclencher l'arrêt d'urgence.");
+}
+
+void loop() {
+    // Lire l'état de la broche GPIO en mode digital
+    int digitalValue = digitalRead(D3);
+
+    // Vérifier si la broche GPIO est active
+    if (digitalValue == LOW) {
+        Serial.println("Arrêt d'urgence déclenché par GPIO.");
+        // Ajouter ici le code pour arrêter tout processus en cours, par exemple, terminer le jeu ou fermer l'application.
+        while (true) {} // Restez dans une boucle infinie pour bloquer le programme
+    }
+
+    // Si des données sont disponibles sur la liaison série
+    if (Serial.available() > 0) {
+        char input = Serial.read(); // Lire la touche entrée depuis la liaison série
+
+        // Vérifier si la touche correspond à la touche d'urgence
+        if (input == EMERGENCY_KEY) {
+            Serial.println("Arrêt d'urgence déclenché par liaison série.");
+            // Ajouter ici le code pour arrêter tout processus en cours, par exemple, terminer le jeu ou fermer l'application.
+            while (true) {} // Restez dans une boucle infinie pour bloquer le programme
+        }
+    }

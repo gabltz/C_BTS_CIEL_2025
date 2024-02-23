@@ -287,7 +287,7 @@ void envoiEtaAutomateSurBDD(int monEtatAutom)
 {
     char query[1000];
       //sprintf(query, "INSERT INTO ETATAUTOMAE (dateHeure, numModule, numEntree, numSortie, ETAT) VALUES (NOW(), %d, %d, %d, %d)",   rtie, ETAT);
-     sprintf(query,  "UPDATE 'ETEAUTOMATE SET etatAutomate ='%d'  WHERE repere = 0;", monEtatAutom); 
+     sprintf(query,  "UPDATE ETATUTOMATE SET etatAutomate ='%d'  WHERE repere = 0;", monEtatAutom); 
  
  
     // Exécutez la requête SQL

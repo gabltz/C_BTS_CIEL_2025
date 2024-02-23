@@ -47,3 +47,16 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#deleteButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999; 
+}

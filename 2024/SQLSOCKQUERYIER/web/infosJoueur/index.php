@@ -1,13 +1,13 @@
 <?php
 
 // Connexion à la base de données
-$servername = "172.18.30.150"; // ou l'adresse IP de ton serveur MySQL
+$servername = "127.0.0.1"; // ou l'adresse IP de ton serveur MySQL
 $username = "user"; // ton nom d'utilisateur MySQL
 $password = "user"; // ton mot de passe MySQL
 $dbname = "test"; // le nom de ta base de données
 
 // Création de la connexion
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli("127.0.0.1", "user", "user", "test");
 
 // Vérification de la connexion
 if ($conn->connect_error) {

@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>BDD Semaine Projet</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
+    <header>
     <h1>Données de la base de données</h1>
+    </header>
+    <button id="deleteButton">Supprimer toutes les données</button>
 
     <?php
     $mysqli = new mysqli("127.0.0.1", "user", "user", "test");
@@ -41,10 +44,26 @@
     ?>
 
     <script src='./refresh.js'></script>
-
+    <br></br>
+    <br></br>
     <footer>
         <p>© 2024 - BTS CIEL 2025 - Semaine projet semaine 8</p>
     </footer>
+    <script>
+        $(document).ready(function () {
+            $("#deleteButton").click(function () {
+                if (confirm("Voulez-vous vraiment supprimer toutes les données ?")) {
+                    $.ajax({
+                        url: './delete_data.php', // Fichier PHP pour le traitement de la suppression
+                        type: 'POST',
+                        success: function (response) {
+                            location.reload(); // Rechargement de la page après suppression
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

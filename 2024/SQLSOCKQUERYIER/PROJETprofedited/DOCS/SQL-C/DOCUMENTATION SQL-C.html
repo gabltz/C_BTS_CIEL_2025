@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOCUMENTATION SQL-C</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="connection-et-requête-sql-en-c">Connection et requête SQL en C</h1>
+<p>Pour ce programme, nous aurons besoin d’utiliser la librairie <code>mysql.h</code> (se trouvant sur un système Linux sous <code>/usr/include/mariadb/mysql.h</code>, NB : pour inclure la lib, utiliser <code>#include &lt;mariadb/mysql.h&gt;</code>.</p>
+<pre class=" language-mermaid"><svg id="mermaid-svg-wJAZZ6tPrgq3u3ZF" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="149.8125" style="max-width: 374.515625px;" viewBox="0 0 374.515625 149.8125"><style>#mermaid-svg-wJAZZ6tPrgq3u3ZF{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .error-icon{fill:#552222;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .error-text{fill:#552222;stroke:#552222;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .edge-thickness-normal{stroke-width:2px;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .marker{fill:#666;stroke:#666;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .marker.cross{stroke:#666;}#mermaid-svg-wJAZZ6tPrgq3u3ZF svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .cluster-label text{fill:#333;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .cluster-label span{color:#333;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .label text,#mermaid-svg-wJAZZ6tPrgq3u3ZF span{fill:#000000;color:#000000;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .node rect,#mermaid-svg-wJAZZ6tPrgq3u3ZF .node circle,#mermaid-svg-wJAZZ6tPrgq3u3ZF .node ellipse,#mermaid-svg-wJAZZ6tPrgq3u3ZF .node polygon,#mermaid-svg-wJAZZ6tPrgq3u3ZF .node path{fill:#eee;stroke:#999;stroke-width:1px;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .node .label{text-align:center;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .node.clickable{cursor:pointer;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .arrowheadPath{fill:#333333;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .edgePath .path{stroke:#666;stroke-width:1.5px;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .flowchart-link{stroke:#666;fill:none;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .edgeLabel{background-color:white;text-align:center;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .cluster rect{fill:hsl(210,66.6666666667%,95%);stroke:#26a;stroke-width:1px;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .cluster text{fill:#333;}#mermaid-svg-wJAZZ6tPrgq3u3ZF .cluster span{color:#333;}#mermaid-svg-wJAZZ6tPrgq3u3ZF div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160,0%,93.3333333333%);border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg-wJAZZ6tPrgq3u3ZF:root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaid-svg-wJAZZ6tPrgq3u3ZF flowchart{fill:apa;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" style="opacity: 1;" id="L-A-B"><path class="path" d="M127.578125,74.90625L180.140625,74.90625L232.703125,74.90625" marker-end="url(https://stackedit.io/app#arrowhead84)" style="fill:none"></path><defs><marker id="arrowhead84" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform="translate(180.140625,74.90625)"><g transform="translate(-27.5625,-13.359375)" class="label"><rect rx="0" ry="0" width="55.125" height="26.71875"></rect><foreignObject width="55.125" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B">mysql.h</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" style="opacity: 1;" id="flowchart-A-414" transform="translate(67.7890625,74.90625)"><rect rx="0" ry="0" x="-59.7890625" y="-23.359375" width="119.578125" height="46.71875" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.7890625,-13.359375)"><foreignObject width="99.578125" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Programme C</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-B-415" transform="translate(299.609375,74.90625)"><circle x="-66.90625" y="-23.359375" r="66.90625" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-56.90625,-13.359375)"><foreignObject width="113.8125" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Serveur MySQL</div></foreignObject></g></g></g></g></g></g></svg></pre>
+<p>Voici le code pour se connecter et envoyer une requête SQL grâce à un code en C (pensez à modifier <code>*server, *user, *password et *database</code> :</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token macro property">#<span class="token directive keyword">include</span>  <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span>  <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span>  <span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span>  <span class="token string">&lt;mariadb/mysql.h&gt;</span></span>
+
+  
+
+<span class="token keyword">int</span>  <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+	MYSQL  <span class="token operator">*</span>conn<span class="token punctuation">;</span>
+	MYSQL_RES  <span class="token operator">*</span>res<span class="token punctuation">;</span>
+	MYSQL_ROW  row<span class="token punctuation">;</span>
+	<span class="token keyword">char</span>  <span class="token operator">*</span>server  <span class="token operator">=</span>  <span class="token string">"IPduServeur"</span><span class="token punctuation">;</span>
+	<span class="token keyword">char</span>  <span class="token operator">*</span>user  <span class="token operator">=</span>  <span class="token string">"utilisateur"</span><span class="token punctuation">;</span> <span class="token comment">// Utilisateur de la base de données</span>
+	<span class="token keyword">char</span>  <span class="token operator">*</span>password  <span class="token operator">=</span>  <span class="token string">"motdepasse"</span><span class="token punctuation">;</span> <span class="token comment">// Mot de passe de la base de données</span>
+	<span class="token keyword">char</span>  <span class="token operator">*</span>database  <span class="token operator">=</span>  <span class="token string">"database"</span><span class="token punctuation">;</span> <span class="token comment">// Nom de la base de données</span>
+	conn  <span class="token operator">=</span>  <span class="token function">mysql_init</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">// Connexion à la base de données</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">mysql_real_connect</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span> server<span class="token punctuation">,</span> user<span class="token punctuation">,</span> password<span class="token punctuation">,</span> database<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">"%s\n"</span><span class="token punctuation">,</span> <span class="token function">mysql_error</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">// Demander à l'utilisateur d'entrer la requête SQL</span>
+	<span class="token keyword">char</span>  query<span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Entrez votre requête SQL : "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">fgets</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// Supprimer le saut de ligne à la fin de la requête</span>
+	<span class="token keyword">int</span>  len  <span class="token operator">=</span>  <span class="token function">strlen</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>query<span class="token punctuation">[</span>len  <span class="token operator">-</span>  <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span>  <span class="token string">'\n'</span><span class="token punctuation">)</span>
+		query<span class="token punctuation">[</span>len  <span class="token operator">-</span>  <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span>  <span class="token string">'\0'</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">// Exécution de la requête SQL</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">mysql_query</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span> query<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">"%s\n"</span><span class="token punctuation">,</span> <span class="token function">mysql_error</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// Récupération et affichage des résultats</span>
+	res  <span class="token operator">=</span>  <span class="token function">mysql_use_result</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>row  <span class="token operator">=</span>  <span class="token function">mysql_fetch_row</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span>  <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span>  i  <span class="token operator">=</span>  <span class="token number">0</span><span class="token punctuation">;</span> i  <span class="token operator">&lt;</span>  <span class="token function">mysql_num_fields</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s "</span><span class="token punctuation">,</span> row<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">?</span>  row<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">:</span>  <span class="token string">"NULL"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token function">mysql_free_result</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// Fermeture de la connexion</span>
+	<span class="token function">mysql_close</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span>  <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h2 id="configuration-du-serveur-mariadb-pour-accepter-les-connections-distantes-dans-le-cas-où-le-script-nest-pas-exécuter-sur-lhôte-du-serveur-sql">Configuration du serveur MariaDB pour accepter les connections distantes (dans le cas où le script n’est pas exécuter sur l’hôte du serveur SQL)</h2>
+<p>En essayant d’exécuter le programme ci-dessus, vous devriez sûrement tomber sur ce type d’erreur :</p>
+<p><img src="https://i.imgur.com/ul3zdPj.png" alt="erreur post exécution"><br>
+Je vais donc vous montrer comment configurer le serveur SQL afin d’accepter les requêtes distantes :</p>
+<p>Tout d’abord, assurez-vous que les variables <code>skip-networking</code> soit bien à OFF et <code>bind-address</code> sur l’adresse IP de votre serveur.<br>
+Normalement, lorsque vous vous connectez au serveur en connection locale et que vous exécutez <code>SHOW VARIABLES LIKE 'skip_networking';</code> et <code>SHOW VARIABLES LIKE 'bind-address';</code> vous devriez récupérer ceci :</p>
+<p><img src="https://i.imgur.com/vvmlQJ2.png" alt=""></p>
+<p>Si vous avez ça, tout est bon pour la suite, nous allons donc pouvoir configurer un utilisateur d’accès distant sur notre serveur SQL !</p>
+<h3 id="premièrement-modification-de-la-bind-address">Premièrement, modification de la bind-address</h3>
+<p>Vous allez devoir modifier le fichier <code>/etc/mysql/mariadb.conf.d/50-server.cnf</code> afin d’y modifier la valeur de <code>bind-address</code>. Pour se faire exécutez la commande <code>nano /etc/mysql/mariadb.conf.d/50-server.cnf</code> et cherchez la ligne où il y’a écris <code>bind-address</code>. Modifiez cette ligne en remaplaçant 0.0.0.0 par l’adresse IP de votre serveur. Pour fermer et enregistrer, appuyez sur Ctrl+X puis tapez sur Y.<br>
+Redémarrez le serveur SQL à l’aide de la commande <code>systemctl restart mariadb</code> puis connectez vous.</p>
+<h4 id="connexion-à-la-console-sql.">Connexion à la console SQL.</h4>
+<p>Connectez vous ensuite à votre console SQL en utilisant <code>mysql -u root -p</code>, un mot de passe <strong>(que vous aurez défini à l’installation de votre serveur SQL)</strong> vous sera demandé. Vous devriez ensuite tomber sur cette console :<br>
+<img src="https://i.imgur.com/QowQjFb.png" alt="Connecté au serveur SQL"></p>
+<p>Une fois que vous êtes connectés au serveur SQL, vous allez créer un utilisateur en lui octroyant l’accès, vous allez utiliser les commandes suivantes, en prêtant attention à modifier <code>utilisateur</code>, <code>basededonnees</code> et <code>motdepasse</code>.<br>
+Voici les commandes à exécuter unes par une :</p>
+<ul>
+<li>
+<p><code>CREATE USER 'utilisateur'@'localhost' IDENTIFIED BY 'motdepasse';</code></p>
+</li>
+<li>
+<p><code>GRANT ALL ON basededonnees.* to 'utilisateur'@'%' IDENTIFIED BY 'motdepasse' WITH GRANT OPTION;</code></p>
+</li>
+<li>
+<p><code>FLUSH PRIVILEGES;</code></p>
+</li>
+<li>
+<p><code>EXIT;</code></p>
+</li>
+</ul>
+<p>Si tout ce passe bien, à l’exécution de chaque commande la console devrait vous renvoyer ceci : <code>Query OK, 0 rows affected (0.001 sec)</code>.<br>
+<img src="https://i.imgur.com/eZJpeUt.png" alt="creation utilisateur"><br>
+<img src="https://i.imgur.com/g7Svcpx.png" alt="attribution des droits"></p>
+<p>Maintenant, lorsque vous allez exécuter votre programme, en utilisant les identifiants que l’on vient tout juste de créer, vous devriez pouvoir envoyer une requête SQL comme ceci ! :<br>
+<img src="https://i.imgur.com/mYvCkDz.png" alt=""></p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+#include <ESP8266WiFi.h>
+#include <WiFiUdp.h>
+
+const char* ssid =      "Cisco24G";
+const char* password =          ""; // Mot de passe vide
+
+const char* serverIP      = "172.18.30.150";
+const uint16_t serverPort =           5000;
+
+WiFiUDP udp;
+
+// Déclaration de la broche utilisée pour le bouton poussoir
+const int PinARU = 4;     // GPIO4 Broche à laquelle est connecté le bouton Arrêt d'urgence  (ecriture sur la carte :"D2")
+
+// Déclaration de la broche utilisée pour la LED rouge
+const int PinLedRouge = 5;   // GPIO 5 D1   
+
+// Variable pour stocker l'état précédent du bouton
+
+int etatBoutonPrec = HIGH;
+
+void setup() {
+  // Initialisation des broches du bouton et des LEDs
+  pinMode(PinARU,       INPUT);
+  pinMode(PinLedRouge, OUTPUT);
+
+  // Initialisation de la communication série pour afficher les messages
+  Serial.begin(9600);
+
+  // Configuration de l'adresse IP statique
+  IPAddress ip(172,18,30,5);
+  IPAddress gateway(172, 18, 30, 254);
+  IPAddress subnet(255, 255, 255, 0);
+  WiFi.config(ip, gateway, subnet);
+
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);  //  connection au wifi
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+
+
+  // on fait clignoter la led rouge 2 fois
+  for (int i =0 ; i<= 3; i++)
+  {
+    digitalWrite(PinLedRouge,HIGH);
+    delay(200);
+    digitalWrite(PinLedRouge,LOW);
+    delay(200);
+  }
+}
+
+void loop() {
+  // Lecture de l'état actuel du bouton
+  int etatBouton = digitalRead(PinARU);
+
+  // Vérification si l'état du bouton a changé
+  if (etatBouton != etatBoutonPrec) {
+    // Si le bouton est activé
+    if (etatBouton == LOW) {
+      // Allumer la led rouge
+      digitalWrite(PinLedRouge, LOW); 
+      // Allumer la LED verte et éteindre la LED rouge
+      //digitalWrite(ledVertePin, HIGH);
+      //digitalWrite(ledRougePin, LOW);
+      // Envoyer un message au serveur
+      udp.beginPacket(serverIP, serverPort);
+      udp.print("5,3,0,1");
+      udp.endPacket();
+    } 
+    else 
+    {
+      // Si le bouton est relâché
+      delay(500);
+      // Éteindre la LED verte et allumer la LED rouge
+      digitalWrite(PinLedRouge, LOW);
+    }
+    // Mettre à jour l'état précédent du bouton
+    etatBoutonPrec = etatBouton;
+  }
+}

@@ -6,7 +6,7 @@ Titre : RFID TEST OUVERTURE
 Descrition: Permet de lire des badge (Badge rond et carré défini au debut) si les badges sont passé dans l'ordre R C R R C on peut sortir, sinon on reste enfermé
 Noms : Lylou BALLAND & Léane MOUGIN
 Date création : 16/01/24
-Date dernière modif: 16/01/24
+Date dernière modif: 21/02/24 11h50 L.B
 */
 
 #define SS_PIN 10  // Broche du Slave Select (SS) du module RC522
@@ -62,15 +62,12 @@ void loop() {
       // Si la séquence est complète, afficher le message approprié  --------------------------------------------------------------------------------------------------------
       if (sequenceIndex == 5) {
           digitalWrite(8, HIGH);
-          delay(2000); // Wait for 2000 millisecond(s)
+          delay(8000); // Wait for 8000 millisecond(s)
           digitalWrite(8, LOW);
         Serial.println("\n Vous pouvez sortir ! \n");
         sequenceIndex = 0; // Réinitialiser la séquence
       }
     } else {
-        digitalWrite(7, HIGH);
-        delay(2000); // Wait for 2000 millisecond(s)
-        digitalWrite(7, LOW);
       Serial.println("\n Ordre Incorrect");
       sequenceIndex = 0; // Réinitialiser la séquence en cas de badge incorrect
     }

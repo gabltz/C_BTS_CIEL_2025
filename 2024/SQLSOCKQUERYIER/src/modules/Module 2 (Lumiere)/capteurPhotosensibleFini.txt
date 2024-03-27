@@ -1,0 +1,84 @@
+#include <ESP8266WiFi.h>
+#include <WiFiUdp.h>
+
+/*Semaine projet Escape Game
+  Module 2 : capteur de lumière (photoresistance)
+  Mougin Léane
+  21/02/24
+  version 1
+*/
+
+/************************Cablage****************************
+3V3 -> photoresistance
+photoresistance -> ADC0 (A0)
+photoresistance -> resistance 10 Ω 
+resistance -> GND
+************************************************************/
+
+int light = 0; // intitialise la valeur de la lumière
+bool dataSent = false; // Variable pour garder une trace de si les données ont été envoyées
+
+
+//Configuration du Wifi 
+const char* ssid = "Cisco24G";
+const char* password = ""; // Mot de passe vide
+
+// Configuration du socket 
+const char* serverIP = "172.18.30.150";
+const uint16_t serverPort = 5000;
+
+/// Définir values pour sendPacket avec récupération auto des ES
+char values[20];
+
+WiFiUDP udp;
+
+void setup() {
+    Serial.begin(9600); // configure serial to talk to computer
+    delay(1000);
+    // initialize digital pin LED_BUILTIN as an output.
+    pinMode(LED_BUILTIN, OUTPUT);
+
+    // Configuration de l'adresse IP statique
+    IPAddress ip(172, 18, 30, 153);
+    IPAddress gateway(172, 18, 30, 254);
+    IPAddress subnet(255, 255, 255, 0);
+    WiFi.config(ip, gateway, subnet);
+
+    Serial.println();
+    Serial.print("Connecting to ");
+    Serial.println(ssid);
+
+    WiFi.begin(ssid, password);
+
+    while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void  loop() {
+    light = analogRead(A0);  //relève la valeur de la lunière
+    Serial.println(light); //puis l'affiche
+ 
+    if(light > 700 && !dataSent) { // Si la lumière est assez haute comme une lampe torche devant
+      // Formater la chaîne avec les valeurs
+      snprintf(values, 20, "2,0,0,%d", light); //20 est la taille de values, 2 le numero du module, 0 et 0 respectivement numEntree et numSortie puis la valeur revelée
+      sendPacket(values);    //Envoie les valeurs à la bdd
+      
+      //Indique qu'une valeur à bien été envoyée
+      dataSent = true;
+    }
+    delay(1000);
+}
+
+// Fonction pour envoyer les valeurs au serveur, values est une chaîne de caractère comportant (numModule[INT], numEntree[INT], numSortie[INT], ETAT[INT])
+void sendPacket(const char* values){
+  udp.beginPacket(serverIP, serverPort); //Début du packet avec initialisation au serveur 
+  udp.print(values); // Envoi sur le socket  
+  udp.endPacket(); // Fermeture et signature du packet UDP
+}

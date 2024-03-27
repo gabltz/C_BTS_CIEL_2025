@@ -1,0 +1,106 @@
+/* Message box */
+.message-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Couleur blanche avec opacité */
+    color: #000; /* Couleur du texte en noir */
+    padding: 20px;
+    margin: 20px auto; /* Centre horizontalement */
+    max-width: 600px; /* Largeur maximale de la boîte */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+    background-color: #000;
+    background-image: url('./MATRIX.gif');
+    background-size: cover;
+    display: grid; /* Ou flex pour une autre méthode */
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 20px; /* Espacement entre les éléments */
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+/* Animation de l'élément h1 */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+    background-color: #000;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    color: #fff; /* Ajout de la couleur blanche pour le texte */
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+p {
+    background-color: rgba(255, 255, 255, 0.588); /* Fond blanc */
+    padding: 10px; /* Espacement intérieur */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    margin-bottom: 20px; /* Marge en bas */
+    font-size: 50px;
+    display: inline;
+    display: block; /* Par défaut, mais peut être utile pour clarifier */
+    width: 100%; /* Assure que chaque paragraphe prend toute la largeur disponible */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-text {
+    background-color: transparent;
+    border: none;
+}

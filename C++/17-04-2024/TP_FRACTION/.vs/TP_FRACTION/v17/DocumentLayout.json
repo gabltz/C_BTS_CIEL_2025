@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2769649D-4743-4A31-ADA2-577B24E0B8A5}|TP_FRACTION.vcxproj|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\fraction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2769649D-4743-4A31-ADA2-577B24E0B8A5}|TP_FRACTION.vcxproj|solutionrelative:fraction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2769649D-4743-4A31-ADA2-577B24E0B8A5}|TP_FRACTION.vcxproj|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\fraction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2769649D-4743-4A31-ADA2-577B24E0B8A5}|TP_FRACTION.vcxproj|solutionrelative:fraction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2769649D-4743-4A31-ADA2-577B24E0B8A5}|TP_FRACTION.vcxproj|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\TP_FRACTION.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2769649D-4743-4A31-ADA2-577B24E0B8A5}|TP_FRACTION.vcxproj|solutionrelative:TP_FRACTION.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2769649D-4743-4A31-ADA2-577B24E0B8A5}|TP_FRACTION.vcxproj|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\fraction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2769649D-4743-4A31-ADA2-577B24E0B8A5}|TP_FRACTION.vcxproj|solutionrelative:fraction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "fraction.cpp",
               "DocumentMoniker": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\fraction.cpp",
               "RelativeDocumentMoniker": "fraction.cpp",
@@ -39,27 +39,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "fraction.h",
               "DocumentMoniker": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\fraction.h",
               "RelativeDocumentMoniker": "fraction.h",
               "ToolTip": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\fraction.h",
               "RelativeToolTip": "fraction.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAGAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAswBoAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-17T08:48:21.645Z"
+              "WhenOpened": "2024-04-17T08:48:21.645Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TP_FRACTION.cpp",
               "DocumentMoniker": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\TP_FRACTION.cpp",
               "RelativeDocumentMoniker": "TP_FRACTION.cpp",
               "ToolTip": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\17-04-2024\\TP_FRACTION\\TP_FRACTION.cpp",
               "RelativeToolTip": "TP_FRACTION.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-17T08:43:53.634Z"
+              "WhenOpened": "2024-04-17T08:43:53.634Z",
+              "EditorCaption": ""
             }
           ]
         }

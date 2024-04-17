@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\jeu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:C\u002B\u002B\\15-04-2024\\jeu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\meneur.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:C\u002B\u002B\\15-04-2024\\meneur.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\joueur.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:C\u002B\u002B\\15-04-2024\\joueur.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\lib\\meneur.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:C\u002B\u002B\\15-04-2024\\lib\\meneur.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "joueur.cpp",
+              "DocumentMoniker": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\joueur.cpp",
+              "RelativeDocumentMoniker": "C\u002B\u002B\\15-04-2024\\joueur.cpp",
+              "ToolTip": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\joueur.cpp",
+              "RelativeToolTip": "C\u002B\u002B\\15-04-2024\\joueur.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-15T14:21:39.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "meneur.cpp",
+              "DocumentMoniker": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\meneur.cpp",
+              "RelativeDocumentMoniker": "C\u002B\u002B\\15-04-2024\\meneur.cpp",
+              "ToolTip": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\meneur.cpp",
+              "RelativeToolTip": "C\u002B\u002B\\15-04-2024\\meneur.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-15T14:20:39.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "meneur.h",
+              "DocumentMoniker": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\lib\\meneur.h",
+              "RelativeDocumentMoniker": "C\u002B\u002B\\15-04-2024\\lib\\meneur.h",
+              "ToolTip": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\lib\\meneur.h",
+              "RelativeToolTip": "C\u002B\u002B\\15-04-2024\\lib\\meneur.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-15T14:19:13.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "jeu.cpp",
+              "DocumentMoniker": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\jeu.cpp",
+              "RelativeDocumentMoniker": "C\u002B\u002B\\15-04-2024\\jeu.cpp",
+              "ToolTip": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\15-04-2024\\jeu.cpp",
+              "RelativeToolTip": "C\u002B\u002B\\15-04-2024\\jeu.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-15T14:17:59.205Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

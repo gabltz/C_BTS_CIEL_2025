@@ -9,13 +9,13 @@ int main() {
 	// Configurer la console pour utiliser UTF-8
 	SetConsoleOutputCP(CP_UTF8);
 
-	// Utiliser une locale avec le codec UTF-8 à UTF-16 pour wcout
+	// Utiliser une locale avec le codec UTF-8 à UTF-16 pour wcout (s'assurer de l'affichage des accents)
 	std::locale::global(std::locale(std::locale::classic(), new std::codecvt_utf8_utf16<wchar_t>));
 
 
 	Fraction f1, f2, result;
 
-	// Utiliser wcout pour les chaînes larges
+	// Utiliser wcout pour les chaînes larges (accents)
 	std::wcout << L"Entrée pour la première fraction\n";
 	std::cin >> f1;
 	std::wcout << "Entrée pour la deuxième fraction" << std::endl;

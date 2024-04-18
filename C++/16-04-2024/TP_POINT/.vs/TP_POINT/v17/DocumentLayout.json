@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{6437FDB8-99CB-4F32-A620-E4E9D5C74710}|TP_POINT.vcxproj|solutionrelative:TP_POINT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6437FDB8-99CB-4F32-A620-E4E9D5C74710}|TP_POINT.vcxproj|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\16-04-2024\\TP_POINT\\point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6437FDB8-99CB-4F32-A620-E4E9D5C74710}|TP_POINT.vcxproj|solutionrelative:point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6437FDB8-99CB-4F32-A620-E4E9D5C74710}|TP_POINT.vcxproj|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\16-04-2024\\TP_POINT\\point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6437FDB8-99CB-4F32-A620-E4E9D5C74710}|TP_POINT.vcxproj|solutionrelative:point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6437FDB8-99CB-4F32-A620-E4E9D5C74710}|TP_POINT.vcxproj|C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\16-04-2024\\TP_POINT\\point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6437FDB8-99CB-4F32-A620-E4E9D5C74710}|TP_POINT.vcxproj|solutionrelative:point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,28 +26,29 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "point.cpp",
               "DocumentMoniker": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\16-04-2024\\TP_POINT\\point.cpp",
               "RelativeDocumentMoniker": "point.cpp",
               "ToolTip": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\16-04-2024\\TP_POINT\\point.cpp",
               "RelativeToolTip": "point.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAABAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAADYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-17T08:14:08.663Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "point.h",
               "DocumentMoniker": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\16-04-2024\\TP_POINT\\point.h",
               "RelativeDocumentMoniker": "point.h",
               "ToolTip": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\16-04-2024\\TP_POINT\\point.h",
               "RelativeToolTip": "point.h",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAgAAAAOAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAgAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-16T11:32:47.926Z"
+              "WhenOpened": "2024-04-16T11:32:47.926Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -57,7 +58,7 @@
               "RelativeDocumentMoniker": "TP_POINT.cpp",
               "ToolTip": "C:\\Users\\gab\\Documents\\GitHub\\C_BTS_CIEL_2025\\C\u002B\u002B\\16-04-2024\\TP_POINT\\TP_POINT.cpp",
               "RelativeToolTip": "TP_POINT.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAABAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAA0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-16T11:31:20.241Z",
               "EditorCaption": ""

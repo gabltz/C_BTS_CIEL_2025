@@ -11,36 +11,29 @@ void print_bits(unsigned char byte) {
 
 void comparer5ebit(unsigned char byte1, unsigned char byte2) {
     // Masque isolant le 5e bit (bit 4, car les bits sont indexés à partir de 0)
-    unsigned char mask = 1 << 4;
-
-    // Extraire le 5e bit de chaque octet
-    unsigned char bit1 = byte1 & mask;
-    unsigned char bit2 = byte2 & mask;
+    //Extraire le 5e bit de chaque octet
+    unsigned char res = conf & mask;
+    
     
 
     printf("Octet Conf:  ");
-    print_bits(byte1);
-    printf("Octet Mask: ");
-    print_bits(byte2);
+    print_bits(conf);
+    printf("Octet Mask:  ");
+    print_bits(mask);
     
     // Comparer les 5e bits
-    if (bit1 == bit2) {
-        printf("Statut du 5e bit: ");
-        if (bit1) {
-            printf("on\n");
-        } else {
+    if (res) {
+        printf("on\n");
+    } else {
             printf("off\n");
-        }
-    } else { // Si problème de comparaison
-        printf("Statut du 5e bit: off\n");
     }
 }
 
 int main() {
-    unsigned char byte1 = 0b00010010; // Example byte 1
-    unsigned char byte2 = 0b00010110; // Example byte 2
+    unsigned char conf = 0b01011010; // Example byte 1
+    unsigned char mask = 0b00001000; // Example byte 2
 
-    comparer5ebit(byte1, byte2);
+    comparer5ebit(conf, mask);
     
     return 0;
 }

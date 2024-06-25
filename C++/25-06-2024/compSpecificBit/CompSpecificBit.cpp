@@ -9,6 +9,7 @@ CompSpecificBit::CompSpecificBit(unsigned int conf, unsigned int mask, int bitIn
 }
 
 void CompSpecificBit::print_bits_colored(unsigned int value, int bitIndex, unsigned int bitValue) const {
+    std::cout << "Affichage des bits de la valeur " << value << " (index du bit à comparer: " << bitIndex << ")" << std::endl;
     for (int i = 31; i >= 0; i--) {
         unsigned int bit = (value >> i) & 1;
         if (i == bitIndex) { // Si le bit actuel est le bit à comparer
@@ -32,6 +33,9 @@ void CompSpecificBit::comparerBitSpecifique() const {
     // Extraire le bit spécifié en utilisant un masque
     unsigned int bitConf = (conf >> bitIndex) & 1;  // Décalage de bitIndex et masquage
     unsigned int bitMask = (mask >> bitIndex) & 1;
+
+    std::cout << "bitConf: " << bitConf << std::endl;
+    std::cout << "bitMask: " << bitMask << std::endl;
 
     std::cout << "Valeur Conf:  ";
     print_bits_colored(conf, bitIndex, bitMask);

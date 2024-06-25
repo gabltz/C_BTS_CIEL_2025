@@ -27,11 +27,14 @@ int main() {
 
     // Demander quel bit comparer
     std::cout << "Entrez l'index du bit à comparer (0 à 31): ";
-    while (!(std::cin >> bitIndex) || bitIndex < 0 || bitIndex > 31) {
+    while (!(std::cin >> std::dec >> bitIndex) || bitIndex < 0 || bitIndex > 31) {
         std::cout << "Index de bit invalide. Veuillez entrer un nombre entre 0 et 31: ";
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
+
+    // Afficher l'index pour vérification
+    std::cout << "Index du bit à comparer: " << bitIndex << std::endl;
 
     try {
         CompSpecificBit comparator(conf, mask, bitIndex);
